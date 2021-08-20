@@ -1,5 +1,5 @@
 resource "aws_docdb_cluster" "sample" {
-  cluster_identifier = var.docdb-cluster-sample
+  cluster_identifier = var.docdb_cluster_sample
   engine = "docdb"
   master_username = var.master_docdb_user
   master_password = var.master_docdb_password
@@ -12,7 +12,7 @@ resource "aws_docdb_cluster" "sample" {
 
 resource "aws_docdb_cluster_instance" "sample_instance" {
   count = 1
-  identifier = var.sample-docdb-1
+  identifier = var.sample_docdb_1
   cluster_identifier = aws_docdb_cluster.sample.id
   instance_class = "db.t3.medium"
   tags = local.common_tags
@@ -21,8 +21,8 @@ resource "aws_docdb_cluster_instance" "sample_instance" {
 resource "aws_docdb_subnet_group" "subnet_group" {
   name = "main"
   subnet_ids = [
-    var.private-subnet-1,
-    var.private-subnet-2
+    var.private_subnet_1,
+    var.private_subnet_2
   ]
   tags = local.common_tags
 }

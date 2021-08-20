@@ -10,8 +10,8 @@ resource "aws_vpc_endpoint" "sample_sqs_endpoint" {
   vpc_endpoint_type   = "Interface"
   private_dns_enabled = true
   subnet_ids = [
-    var.private-subnet-1,
-    var.private-subnet-2
+    var.private_subnet_1,
+    var.private_subnet_2
   ]
   security_group_ids = [aws_security_group.sample.id]
   tags = local.common_tags

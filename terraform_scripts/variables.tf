@@ -18,12 +18,12 @@ variable "master_docdb_user" {
   default = "<MASTER-DOCDB-USER>"
 }
 
-variable "private-subnet-1"{
+variable "private_subnet_1"{
   type = string
   default = "<PRIVATE-SUBNET-ID>"
 }
 
-variable "private-subnet-2"{
+variable "private_subnet_2"{
   type = string
   default = "<PRIVATE-SUBNET-ID>"
 }
@@ -34,13 +34,13 @@ variable "user_region" {
   default     = "<AWS-REGION>"
 }
 
-variable "docdb-cluster-sample" {
+variable "docdb_cluster_sample" {
   type = string
-  default = "docdb-cluster-sample"
+  default = "docdb_cluster_sample"
 }
 
-variable "sample-docdb-1" {
+variable "sample_docdb_1" {
   type = string
-  default = "sample-docdb-1"
+  default = "sample_docdb_1"
 }
 

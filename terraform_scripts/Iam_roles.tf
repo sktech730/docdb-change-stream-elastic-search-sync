@@ -122,12 +122,10 @@ resource "aws_iam_policy" "update-elastisearch-lambda-policy" {
 }
 EOF
 }
-//arn:aws:sqs:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:${aws_sqs_queue.docdb_sync_es_queue.id}
+
 resource "aws_iam_policy_attachment" "update-elastisearch-lambda-policy-attachment" {
   name = "update-elastisearch-lambda-policy-attachment"
   policy_arn = aws_iam_policy.update-elastisearch-lambda-policy.arn
   roles = [
     aws_iam_role.update-elastisearch-lambda-role.name]
 }
-
-

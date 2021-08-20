@@ -9,8 +9,7 @@ resource "aws_iam_service_linked_role" "es" {
 }
 
 /*
-Data source of Polciy, giving permission elastic search service
-to publish logs to cloudwatcg log groups
+Data source for policy to grant Elasticsearch permission to publish logs to CloudWatch
 */
 data "aws_iam_policy_document" "elasticsearch-log-publishing-policy" {
   statement {
@@ -22,7 +21,6 @@ data "aws_iam_policy_document" "elasticsearch-log-publishing-policy" {
 
     resources = ["arn:aws:logs:*"]
 
-
     principals {
       identifiers = ["es.amazonaws.com"]
       type        = "Service"
@@ -31,8 +29,7 @@ data "aws_iam_policy_document" "elasticsearch-log-publishing-policy" {
 }
 
 /*
-a resource aws_cloudwatch_log_resource_policy gives permission to elastic
-to publish logs to cloudwatcg log groups
+CloudWatch log group policy to grant Elasticsearch permission to publish logs
 */
 resource "aws_cloudwatch_log_resource_policy" "sample_elastic_search_log_resource_policy" {
   policy_document = data.aws_iam_policy_document.elasticsearch-log-publishing-policy.json
@@ -75,8 +72,8 @@ resource "aws_elasticsearch_domain" "sample_elastic_domain" {
 
   vpc_options {
     subnet_ids = [
-    var.private-subnet-1,
-    var.private-subnet-2
+    var.private_subnet_1,
+    var.private_subnet_2
   ]
     security_group_ids = [aws_security_group.sample.id]
   }

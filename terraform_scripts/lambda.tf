@@ -41,8 +41,8 @@ resource "aws_lambda_function" "process_change_stream" {
   runtime = "python3.8"
   vpc_config {
     subnet_ids = [
-      var.private-subnet-1,
-      var.private-subnet-2
+      var.private_subnet_1,
+      var.private_subnet_2
     ]
     security_group_ids = [
       aws_security_group.sample.id]
@@ -99,8 +99,8 @@ resource "aws_lambda_function" "update_elasticsearch_service" {
   runtime = "python3.8"
   vpc_config {
     subnet_ids = [
-      var.private-subnet-1,
-      var.private-subnet-2
+      var.private_subnet_1,
+      var.private_subnet_2
     ]
     security_group_ids = [
       aws_security_group.sample.id]
