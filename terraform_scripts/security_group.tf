@@ -30,7 +30,7 @@ resource "aws_security_group_rule" "sg-rule-ingress-docdb-http" {
   from_port = 443
   to_port = 443
   protocol = "tcp"
-  description = "Allow HTTPS access from secret manager to lambda"
+  description = "Allow HTTPS access to elasticsearch service from lambda"
   security_group_id = aws_security_group.sample.id
   source_security_group_id = aws_security_group.sample.id
 }
