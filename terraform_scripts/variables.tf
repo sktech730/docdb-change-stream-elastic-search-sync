@@ -3,11 +3,6 @@ variable "vpc_id" {
   default = "<VPC-ID>"
 }
 
-variable "secret_rotation_frequency" {
-  type    = number
-  default = "<SAMPLE-VALUE-IN-NUMBER>" # set the rotation frequency in days
-}
-
 variable "master_docdb_password" {
   type    = string
   default = "<MASTER-DOCDB-PASSWORD>"
