@@ -1,7 +1,6 @@
 /*
-This service linked role needs to created only if the AWS account is not created it yet.
-if your AWS account already have this role created this below code to create role
-again will result into error. hence before creating this role please check your account
+Use the resource below to create service linked role only if your AWS account doesn't already have it.
+Recreating this resource will result in error.
 */
 
 resource "aws_iam_service_linked_role" "es" {
